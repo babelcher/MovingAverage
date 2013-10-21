@@ -1,7 +1,3 @@
-#include <msp430.h> 
-#include "moving_average.h"
-#define SAMPLE_SIZE 4
-
 /*
  *  Created on: Oct 17, 2013
  *  Author: C15Brandon.Belcher
@@ -9,6 +5,11 @@
  *  Documentation: C2C Bentley explained how to use the functions in main so
  *  that they can be tested. I then coded everything on my own.
  */
+
+#include <msp430.h> 
+#include "moving_average.h"
+#define SAMPLE_SIZE 4
+
 int main(void) {
 	WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
 
@@ -35,9 +36,4 @@ int main(void) {
 	minNumberInArray = min(input, 10);
 	rangeOfNumbersInArray = range(input, 10);
 
-	while(1){
-
-	}
-
-
-}
+	while(1){}

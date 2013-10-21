@@ -1,4 +1,5 @@
 /*
+ *
  * movingAverage.c
  *
  *  Created on: Oct 16, 2013
@@ -11,9 +12,11 @@ int getAverage(int array[], unsigned int arrayLength) {
 	int i;
 	int sum = 0;
 	int avg = 0;
+
 	for (i = 0; i < arrayLength; i++) {
 		sum += array[i];
 	}
+
 	avg = sum / arrayLength;
 	return avg;
 }
@@ -21,9 +24,11 @@ int getAverage(int array[], unsigned int arrayLength) {
 //add an integer to the last index of an array and kick out the first integer
 void addSample(int sample, int array[], unsigned int arrayLength) {
 	int i;
+
 	for (i = 0; i < arrayLength; i++) {
 		array[i] = array[i + 1];
 	}
+
 	array[arrayLength - 1] = sample;
 }
 
@@ -31,11 +36,13 @@ void addSample(int sample, int array[], unsigned int arrayLength) {
 int max(int array[], unsigned int arrayLength) {
 	int i;
 	int max = array[0];
+
 	for (i = 1; i < arrayLength; i++) {
 		if (array[i] > max) {
 			max = array[i];
 		}
 	}
+
 	return max;
 }
 
@@ -43,17 +50,19 @@ int max(int array[], unsigned int arrayLength) {
 int min(int array[], unsigned int arrayLength) {
 	int i;
 	int min = array[0];
+
 	for (i = 1; i < arrayLength; i++) {
 		if (array[i] < min) {
 			min = array[i];
 		}
 	}
+
 	return min;
 }
 
 //determine the range of the numbers by subtracting the minimum from the maximum
-unsigned int range(int array[], unsigned int arrayLength) {
+unsiint range(int array[], unsigned int arrayLength) {
 	int rangeForArray = max(array, arrayLength) - min(array, arrayLength);
-	return (unsigned int) rangeForArray;
+	return rangeForArray;
 }
 
